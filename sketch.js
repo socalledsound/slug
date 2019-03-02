@@ -70,11 +70,25 @@ function setup() {
 
 }
 
-function draw() {
+function draw() 
+
+{
+  nextImg = loadImage(imgList[index], imageLoaded);
+  text(index,20,60); // index counter
+  text(imgList[index],80,60); // image list number
+  textSize(20);
+  fill(255);
+}
+
+{
+
+
 	background(252, 116, 133);
 
 	if (gameStarted === true) {
 		startButton.hide();
+
+
 
 		//show score
 
@@ -190,6 +204,12 @@ function draw() {
 		//show the starting button
 		startButton.show();
 	}
+}
+
+function imageLoaded() {
+  background(0);
+  image(nextImg,xPos,yPos,w,h);
+  imageMode(CENTER);
 }
 
 function startGame() {
